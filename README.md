@@ -34,15 +34,11 @@ A color-matching vertical arcade game made with Unity 6. Tap to bounce your ball
 
 ## What I Learned
 
-- Structuring a game around a **GameManager**: the ball only detects events (star, wrong color, finish line) and the GameManager decides what happens.
-- Building levels from **prefabs**, so a change to the ball, camera or UI applies to every level at once.
-- **Scene management** with build indexes: loading the next level, detecting the last level, retrying.
-- A smooth **camera follow** with `Lerp` in `LateUpdate` that only moves upward.
-- Using **mirror symmetry** to keep two counter-rotating rings aligned on the ball's path.
-- **Animator** states and coroutines for UI transitions.
-- Saving settings with **PlayerPrefs**.
-- Migrating from the old Input Manager to the **new Input System**.
-- Storing data on objects with small **components**: each ring segment keeps its own color in a tiny script that the ball reads on contact.
+- **Using a GameManager for its purpose:** the ball only detects collisions, and the GameManager makes the decisions.
+- **Prefab-based levels:** the shared core of every level lives in one prefab, so a single change applies to all 5 levels.
+- **Camera, UI and saving:** a smooth camera that only moves upward with `Lerp` in `LateUpdate`, animated menu transitions with the Animator, and stars and volume saved with `PlayerPrefs`.
+- **Unity functions:** working with many Unity functions such as coroutines, `OnTriggerEnter2D`, `SceneManager`, `AddForce`, `Transform.Rotate` and `SetActive`.
+- **New Input System:** the same code works with both mouse and touch.
 
 ## Credits
 
